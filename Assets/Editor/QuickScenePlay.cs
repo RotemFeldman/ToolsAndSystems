@@ -60,7 +60,7 @@ public class QuickScenePlay : Editor
         if (!_usedToolToEnterPlayMode) return;
 
         EditorPrefs.SetBool(EDITOR_PREFS_USED_TOOL_KEY,false);
-        if (_returnToPreviousSceneAfterPlayMode )
+        if (_returnToPreviousSceneAfterPlayMode && _previousScenePath != null )
         {
             EditorSceneManager.OpenScene(_previousScenePath);
         }
