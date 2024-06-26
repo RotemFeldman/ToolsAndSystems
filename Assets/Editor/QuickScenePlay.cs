@@ -81,7 +81,7 @@ public class QuickScenePlay : Editor
         private static void Init()
         {
             QuickScenePlayPopUp window = GetWindow<QuickScenePlayPopUp>("QuickScenePlay Settings",true,typeof(EditorWindow));
-            _tempMainScenePath = EditorPrefs.GetString(EDITOR_PREFS_MAIN_SCENE_PATH_KEY);
+            _tempMainScenePath = _mainScenePath;
             _tempReturnToScene = _returnToPreviousSceneAfterPlayMode;
             
             window.ShowModalUtility();
