@@ -28,13 +28,15 @@ public class QuickScenePlay : Editor
     {
         EditorApplication.playModeStateChanged += ReturnToPreviousSceneAfterPlayMode;
     }
+    
+    
         
     
 
     [MenuItem("Utility/Rotem's Tools/Quick Scene Play/Play Main Scene #&p")]
     static void PlayMainScene()
     {
-        if (_mainScenePath == null)
+        if (string.IsNullOrEmpty(_mainScenePath))
         {
             Debug.LogWarning("QuickScenePlay has no Main Map selected, Please select one in Utility/Rotem's Tools/Quick Scene Play");
             return;
@@ -107,10 +109,14 @@ public class QuickScenePlay : Editor
         {
             if (_mainSceneGUIStyle == null)
             {
-                _mainSceneGUIStyle = new GUIStyle(GUI.skin.button);
-                _mainSceneGUIStyle.normal.background = MakeTex(2, 2, Color.cyan);
-                _mainSceneGUIStyle.normal.textColor = Color.black;
-    
+                _mainSceneGUIStyle = new GUIStyle(GUI.skin.button)
+                {
+                    normal =
+                    {
+                        background = MakeTex(2, 2, Color.blue),
+                        textColor = Color.white
+                    }
+                };
             }
             
             EditorGUILayout.LabelField("Select Main Scene", EditorStyles.boldLabel);
