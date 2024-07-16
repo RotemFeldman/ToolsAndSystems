@@ -7,9 +7,9 @@ namespace CardsSystem.Effects.Scripts
     public class DebugEffect : CardEffect
     {
         [SerializeField] private string message;
-        public override void PerformEffect()
+        public override void PerformEffect(Card card)
         {
-            Debug.Log(message);
+            Debug.Log($"{card.name} was used, the effect was {message}");
         }
     }
 }

@@ -7,7 +7,7 @@ public class Testing : MonoBehaviour
 
     private void Start()
     {
-        card.Use();
+        card.TryUse();
     }
 
     // Update is called once per frame
