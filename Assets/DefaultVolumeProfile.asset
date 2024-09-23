@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4d6d456a43846859aa493cf70283523, type: 3}
-  m_Name: QuickScenePlayData
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: DefaultVolumeProfile
   m_EditorClassIdentifier: 
-  mainScenePath: 
-  previousScenePath: 
-  returnToPreviousSceneAfterPlayMode: 0
-  usedToolToEnterPlayMode: 0
+  components: []

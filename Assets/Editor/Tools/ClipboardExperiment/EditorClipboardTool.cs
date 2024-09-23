@@ -34,7 +34,7 @@ public class EditorClipboardTool : EditorWindow
         }
     }*/
     
-    [MenuItem("Utility/Rotem's Tools/Editor Clipboard")]
+    [MenuItem("Tools/Experimental/Editor Clipboard")]
     public static void Init()
     {
         GetWindow<EditorClipboardTool>();

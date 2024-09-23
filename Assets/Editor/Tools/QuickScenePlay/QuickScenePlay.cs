@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -51,8 +52,8 @@ public class QuickScenePlay : Editor
         _usedToolToEnterPlayMode = _quickScenePlayData != null && _quickScenePlayData.usedToolToEnterPlayMode;
     }
 
-    [MenuItem("Utility/Rotem's Tools/Quick Scene Play/Play Main Scene #&p")]
-    static void PlayMainScene()
+    [MenuItem("Tools/Quick Scene Play/Play Main Scene #&p")]
+    static async void PlayMainScene()
     {
         if (string.IsNullOrEmpty(_mainScenePath))
         {
@@ -69,7 +70,17 @@ public class QuickScenePlay : Editor
         }
         
         EditorSceneManager.OpenScene(_mainScenePath);
+        await WaitUntilSceneIsLoaded();
+        
         EditorApplication.EnterPlaymode();
+    }
+
+    private static async Task WaitUntilSceneIsLoaded()
+    {
+        while (!EditorSceneManager.GetActiveScene().isLoaded)
+        {
+            await Task.Yield();
+        }
     }
     
     private static void ReturnToPreviousSceneAfterPlayMode(PlayModeStateChange playModeStateChange)
@@ -95,7 +106,7 @@ public class QuickScenePlay : Editor
         private static string _tempMainScenePath;
         private static bool _tempReturnToScene;
         
-        [MenuItem("Utility/Rotem's Tools/Quick Scene Play/Quick Scene Play Settings")]
+        [MenuItem("Tools/Quick Scene Play/Quick Scene Play Settings")]
         private static void Init()
         {
             QuickScenePlayPopUp window = GetWindow<QuickScenePlayPopUp>("QuickScenePlay Settings",true,typeof(EditorWindow));
@@ -218,13 +229,6 @@ public class QuickScenePlay : Editor
         }
     }
 
-    public class QuickScenePlayData : ScriptableObject
-    {
-        public string mainScenePath;
-        public string previousScenePath;
-        public bool returnToPreviousSceneAfterPlayMode;
-        public bool usedToolToEnterPlayMode;
-
-    }
+    
 }
 
