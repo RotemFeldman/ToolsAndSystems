@@ -12,7 +12,7 @@ using Scene = UnityEngine.SceneManagement.Scene;
 [Icon(UNITY_ICON)]
     public class SceneSelectionOverlay : ToolbarOverlay
     {
-        public const string UNITY_ICON = "Assets/Editor/Icons/UnityIcon.png";
+        public const string UNITY_ICON = "Assets/Tools/Icons/UnityIcon.png";
         
         
         SceneSelectionOverlay(): base(SceneDropDownToggle.ID) {}

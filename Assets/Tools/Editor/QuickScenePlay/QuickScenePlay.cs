@@ -13,7 +13,7 @@ using UnityEngine.UIElements;
 public class QuickScenePlay : Editor
 {
     
-    private const string DATA_PATH = "Assets/Editor/Tools/QuickScenePlay/QuickScenePlayData.asset";
+    private const string DATA_PATH = "Assets/Tools/Editor/QuickScenePlay/QuickScenePlayData.asset";
     
     private static QuickScenePlayData _quickScenePlayData;
 
@@ -194,10 +194,19 @@ public class QuickScenePlay : Editor
                 _quickScenePlayData.returnToPreviousSceneAfterPlayMode = _tempReturnToScene;
                 InitializeFields();
                 Close();
+                
+                SaveChanges();
             }
             
             EditorGUILayout.EndHorizontal();
     
+        }
+        
+        private new void SaveChanges()
+        {
+            EditorUtility.SetDirty(_quickScenePlayData);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
         
     

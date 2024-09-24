@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6d456a43846859aa493cf70283523, type: 3}
   m_Name: QuickScenePlayData
   m_EditorClassIdentifier: 
-  mainScenePath: 
+  mainScenePath: Assets/Scenes/New Scene 1.unity
   previousScenePath: 
-  returnToPreviousSceneAfterPlayMode: 0
+  returnToPreviousSceneAfterPlayMode: 1
   usedToolToEnterPlayMode: 0
