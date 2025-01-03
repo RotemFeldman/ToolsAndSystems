@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:CardsSystem.Base:Card
   name: Test
 <<<<<<< Updated upstream:Assets/Systems/CardsSystem/Cards/TestCard.asset
+<<<<<<< Updated upstream:Assets/Systems/CardsSystem/Cards/TestCard.asset
   description: a test card
+=======
+  description: this is a test card
+>>>>>>> Stashed changes:Assets/CardsSystem/Cards/TestCard.asset
 =======
   description: this is a test card
 >>>>>>> Stashed changes:Assets/CardsSystem/Cards/TestCard.asset

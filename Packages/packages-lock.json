@@ -8,7 +8,11 @@
     },
     "com.unity.ai.navigation": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "version": "2.0.3",
+=======
+      "version": "2.0.5",
+>>>>>>> Stashed changes
 =======
       "version": "2.0.5",
 >>>>>>> Stashed changes
@@ -21,7 +25,11 @@
     },
     "com.unity.burst": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "version": "1.8.17",
+=======
+      "version": "1.8.18",
+>>>>>>> Stashed changes
 =======
       "version": "1.8.18",
 >>>>>>> Stashed changes
@@ -35,7 +43,11 @@
     },
     "com.unity.collab-proxy": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "version": "2.4.4",
+=======
+      "version": "2.5.2",
+>>>>>>> Stashed changes
 =======
       "version": "2.5.2",
 >>>>>>> Stashed changes
@@ -46,12 +58,21 @@
     },
     "com.unity.collections": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "version": "2.4.3",
       "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.8.13",
         "com.unity.test-framework": "1.4.3",
+=======
+      "version": "2.5.1",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.8.17",
+        "com.unity.test-framework": "1.4.5",
+>>>>>>> Stashed changes
 =======
       "version": "2.5.1",
       "depth": 2,
@@ -92,7 +113,11 @@
     },
     "com.unity.inputsystem": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "version": "1.9.0",
+=======
+      "version": "1.11.2",
+>>>>>>> Stashed changes
 =======
       "version": "1.11.2",
 >>>>>>> Stashed changes
