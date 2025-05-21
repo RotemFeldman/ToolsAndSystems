@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace ScenesPlus
+namespace UnityUtils.ScenesPlus
 {
 	internal class QuickScenePlaySettings : ScriptableObject
     {

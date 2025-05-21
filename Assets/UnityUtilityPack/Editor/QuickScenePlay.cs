@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace ScenesPlus
+namespace UnityUtils.ScenesPlus
 {
     public class QuickScenePlay : UnityEditor.Editor
     {
@@ -89,7 +89,7 @@ namespace ScenesPlus
                         normal =
                         {
                             textColor = Color.white,
-                            background = MakeTex(1, 1,new Color(0.3f,0.5f,1,1) ),
+                            background = new Texture2D(1,1).Fill(ColorExtensions.EditorBlue),
                         },
                         
                         
@@ -174,19 +174,7 @@ namespace ScenesPlus
                 EditorGUILayout.EndHorizontal();
             }
             
-            private Texture2D MakeTex(int width, int height, Color col)
-            {
-                Color[] pix = new Color[width * height];
-
-                for (int i = 0; i < pix.Length; i++)
-                    pix[i] = col;
-
-                Texture2D result = new Texture2D(width, height);
-                result.SetPixels(pix);
-                result.Apply();
-
-                return result;
-            }
+            
 
             private static string GetSettingsAssetPath()
             {
