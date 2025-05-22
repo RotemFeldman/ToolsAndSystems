@@ -3,6 +3,7 @@ using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace UnityUtils.ScenesPlus
 {
@@ -29,7 +30,6 @@ namespace UnityUtils.ScenesPlus
 
                 window.ShowModalUtility();
             }
-            
 
             private static QuickScenePlaySettings LoadSettings()
             {
@@ -74,7 +74,6 @@ namespace UnityUtils.ScenesPlus
                     string name = Path.GetFileNameWithoutExtension(path);
 
                     _scenes[i] = new SceneInfo(name, path);
-
                 }
             }
 
