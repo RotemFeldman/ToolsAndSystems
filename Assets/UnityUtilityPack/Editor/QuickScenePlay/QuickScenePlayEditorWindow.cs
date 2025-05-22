@@ -9,7 +9,7 @@ namespace UnityUtils.ScenesPlus
 {
     public class QuickScenePlayEditorWindow : EditorWindow
     {
-        [MenuItem("Utility/Rotem's Tools/Quick Scene Play Settings (UI Toolkit)")]
+        [MenuItem("Utility/Rotem's Tools/Quick Scene Play Settings #&p")]
         public static void ShowExample()
         {
             QuickScenePlayEditorWindow wnd = GetWindow<QuickScenePlayEditorWindow>();
@@ -20,6 +20,7 @@ namespace UnityUtils.ScenesPlus
         private ScrollView m_scrollView;
         private Toggle m_toggle;
         private List<(string name, string path)> m_sceneList;
+        private QuickScenePlaySettings m_settings;
     
         public void CreateGUI()
         {
@@ -38,7 +39,7 @@ namespace UnityUtils.ScenesPlus
     
             m_scrollView = new ScrollView();
             m_scrollView.style.flexGrow = 1;
-            m_scrollView.style.backgroundColor = new Color(0.1f, 0.1f, 0.1f, 0.5f);
+            m_scrollView.style.backgroundColor = ColorExtensions.EditorDarkGray;
             root.Add(m_scrollView);
             
             string[] sceneGuids = AssetDatabase.FindAssets("t:scene", new[] { "Assets" });
@@ -66,25 +67,25 @@ namespace UnityUtils.ScenesPlus
                 }
             };
             
-            var settings = LoadSettings();
+            m_settings = LoadSettings();
 
             m_toggle = new Toggle("Enabled");
-            m_toggle.value = settings.enabled;
+            m_toggle.value = m_settings.enabled;
 
             m_toggle.RegisterValueChangedCallback((evt =>
             {
-                settings.enabled = evt.newValue;
-                EditorUtility.SetDirty(settings);
+                m_settings.enabled = evt.newValue;
+                EditorUtility.SetDirty(m_settings);
                 AssetDatabase.SaveAssets();
 
-                if (!settings.enabled)
+                if (!m_settings.enabled)
                 {
                     EditorSceneManager.playModeStartScene = null;
                 }
-                else if (!string.IsNullOrEmpty(settings.mainScenePath))
+                else if (!string.IsNullOrEmpty(m_settings.mainScenePath))
                 {
                     EditorSceneManager.playModeStartScene =
-                        AssetDatabase.LoadAssetAtPath<SceneAsset>(settings.mainScenePath);
+                        AssetDatabase.LoadAssetAtPath<SceneAsset>(m_settings.mainScenePath);
                 }
             }));
             m_toggle.style.flexDirection = FlexDirection.RowReverse;
@@ -107,21 +108,21 @@ namespace UnityUtils.ScenesPlus
         private void RefreshSceneButtons(string filter)
         {
             m_scrollView.Clear();
-            var settings = LoadSettings();
-            string mainScenePath = settings ? settings.mainScenePath : null;
+            string mainScenePath = m_settings ? m_settings.mainScenePath : null;
 
             foreach (var scene in m_sceneList)
             {
-                if (!string.IsNullOrEmpty(filter) && !scene.name.ToLower().Contains(filter.ToLower()))
+                if (!string.IsNullOrEmpty(filter) &&
+                  !scene.name.ToLower().Contains(filter.ToLower()))
                     continue;
     
                 var button = new Button(() =>
                 {
                     EditorSceneManager.playModeStartScene = AssetDatabase.LoadAssetAtPath<SceneAsset>(scene.path);
                     
-                    settings.mainScenePath = scene.path;
+                    m_settings.mainScenePath = scene.path;
                     m_toggle.value = true;
-                    EditorUtility.SetDirty(settings);
+                    EditorUtility.SetDirty(m_settings);
                     AssetDatabase.SaveAssets();
                     RefreshSceneButtons(m_searchField.value);
                 })

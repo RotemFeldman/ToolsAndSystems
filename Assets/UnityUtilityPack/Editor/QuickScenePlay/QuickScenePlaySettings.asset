@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eee2d4eaf8c48e2aac3b76202018e70, type: 3}
   m_Name: QuickScenePlaySettings
   m_EditorClassIdentifier: 
-  mainScenePath: Assets/Scenes/New Scene.unity
-  enabled: 0
+  mainScenePath: Assets/Samples/Yarn Spinner/2.5.1/Phone Chat/PhoneChatExampleScene.unity
+  enabled: 1

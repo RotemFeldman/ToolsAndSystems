@@ -22,7 +22,7 @@ namespace UnityUtils.ScenesPlus
             private static bool _tempReturnToScene;
             private static bool _isEnabled;
 
-            [MenuItem("Utility/Rotem's Tools/Quick Scene Play Settings #&p")]
+            //[MenuItem("Utility/Rotem's Tools/Quick Scene Play Settings #&p")]
             private static void Init()
             {
                 QuickScenePlayPopUp window =
