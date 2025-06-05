@@ -1,3 +1,14 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <Style src="project://database/Assets/UnityUtilityPack/Editor/QuickScenePlay/QuickScenePlayEditorWindow.uss?fileID=7433441132597879392&amp;guid=a96bf79f270eda54fad696e476655981&amp;type=3#QuickScenePlayEditorWindow" />
+    <engine:VisualElement style="flex-grow: 0; flex-direction: row;">
+        <engine:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/UnityUtilityPack/Media/unit-searchOn-icon.png?fileID=2800000&amp;guid=fda4d612a6597b344bda1fe12f0aecec&amp;type=3#unit-searchOn-icon&quot;); background-size: 100% 100%; position: relative; opacity: 1; flex-shrink: 0; flex-direction: row; height: 22px; width: 22px; padding-top: 0; margin-top: 2px; margin-left: 2px; -unity-background-image-tint-color: rgba(255, 255, 255, 0.57);" />
+        <engine:TextField placeholder-text="scene name" enabled="true" name="SearchField" style="margin-top: 4px; margin-left: 6px; flex-grow: 1;" />
+    </engine:VisualElement>
+    <engine:Label text="Select Starting Scene:" name="Title" style="white-space: pre; margin-top: 6px; margin-bottom: 2px; -unity-font-style: normal; font-size: 14px; color: rgba(210, 210, 210, 0.77); -unity-text-align: lower-left;" />
+    <engine:ScrollView name="ScrollView" style="background-color: rgb(42, 42, 42); bottom: auto; flex-grow: 1; top: 0; flex-shrink: 1; margin-top: 4px; margin-bottom: 4px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-left-color: rgba(30, 30, 30, 0.82); border-right-color: rgba(30, 30, 30, 0.82); border-top-color: rgba(30, 30, 30, 0.82); border-bottom-color: rgba(30, 30, 30, 0.82); border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px;" />
+    <engine:VisualElement style="flex-grow: 0; flex-direction: row;">
+        <engine:Toggle label="Enabled" name="Toggle" style="flex-direction: row-reverse;" />
+        <engine:VisualElement style="flex-grow: 1;" />
+        <engine:Button text="Close" name="CloseBtn" emoji-fallback-support="false" style="align-self: flex-end;" />
+    </engine:VisualElement>
 </engine:UXML>
